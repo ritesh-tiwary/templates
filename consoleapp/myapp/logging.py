@@ -11,7 +11,7 @@ class Logger:
 		configuration = Configuration(command).get()
 		log_dir = os.path.join(Configuration.LOG_DIR, command if configuration else "UNDEFINED")
 		os.makedirs(log_dir, exist_ok=True)
-		filename = f"MYAPP_{command}_{datetime.now().strftime('%Y%m%d')}.log"
+		filename = f"MYAPP_{command}_{datetime.now().strftime('%Y%m%d__%H%M%S')}.log"
 		self.log_file = os.path.join(log_dir, filename)
 
 	def logger(self):

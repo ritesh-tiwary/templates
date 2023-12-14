@@ -6,6 +6,8 @@ class Configuration:
 	SENDER = os.getenv("SENDER")
 	RECEIVER = os.getenv("RECEIVER")
 	LOG_DIR	= os.getenv("LOG_DIR")
+	INBOUND	= os.getenv("INBOUND")
+	OUTBOUND = os.getenv("OUTBOUND")
 	TRACEBACK = eval(os.getenv("TRACEBACK"))
 
 	def __init__(self, command) -> None:

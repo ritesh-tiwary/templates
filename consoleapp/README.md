@@ -3,9 +3,9 @@ The myapp is generic python console application.
 
 ---
 ## Command
-- myapp run --command xxx --date YYYYMMDD
-- myapp email --command xxx --date YYYYMMDD
-- myapp cleanup --command xxx --date YYYYMMDD
+- myapp run --command empdata --date YYYYMMDD
+- myapp email --command empdata --date YYYYMMDD
+- myapp cleanup --command empdata --date YYYYMMDD
 ---
 ## Build
 - python setup.py bdist_wheel

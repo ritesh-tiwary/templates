@@ -9,7 +9,7 @@ class Command:
 		"""
 		Command:
 		========
-		myapp run --command XXX --date YYYYMMDD
+		myapp run --command test --date YYYYMMDD
 		"""
 		self.logger = Logger(args.command, __name__)
 		self.logger.info(f"{'>>'*10} [COMMAND INITIATED] myapp run --command {args.command} --date {args.date} {'<<'*10}")
@@ -20,7 +20,7 @@ class Command:
 		"""
 		Command:
 		========
-		myapp email --command XXX --date YYYYMMDD
+		myapp email --command test --date YYYYMMDD
 		"""
 		self.logger = Logger(args.command, __name__)
 		self.logger.info(f"{'>>'*10} [COMMAND INITIATED] myapp email --command {args.command} --date {args.date} {'<<'*10}")
@@ -31,7 +31,7 @@ class Command:
 		"""
 		Command:
 		========
-		myapp cleanup --command XXX --date YYYYMMDD
+		myapp cleanup --command test --date YYYYMMDD
 		"""
 		self.logger = Logger(args.command, __name__)
 		self.logger.info(f"{'>>'*10} [COMMAND INITIATED] myapp cleanup --command {args.command} --date {args.date} {'<<'*10}")

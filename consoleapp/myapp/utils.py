@@ -12,7 +12,7 @@ class Utils:
 		"""
 		Return list of log files
 		"""
-		log_dir = os.path.join(Configuration.LOG_DIR, self.commnad)
-		log_files = [os.path.join(log_dir, f"MYAPP_{self.commnad}_{self.date}_*.log")]
+		log_dir = os.path.join(Configuration.LOG_DIR, self.command)
+		log_files = [os.path.join(log_dir, f"MYAPP_{self.command}_{self.date}_*.log")]
 		return log_files
 
