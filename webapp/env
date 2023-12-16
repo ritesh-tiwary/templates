@@ -1,0 +1,9 @@
+# Define the flask configuration
+FLASK_APP = app
+FLASK_DEBUG = False
+FLASK_ENV = Development
+FLASK_RUN_HOST = localhost
+FLASK_RUN_PORT = 5001
+
+# Define the application configuration
+DOWNLOAD_DIR = content
