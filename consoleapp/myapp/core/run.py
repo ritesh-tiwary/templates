@@ -21,7 +21,7 @@ class Run(Base):
 				if self.allowed_extensions(file_extension):
 					module_name = self.lazy_loader.load_config("MODULE_NAME").get(file_extension)
 					class_name = self.lazy_loader.load_config("CLASS_NAME").get(file_extension)
-					processor = self.lazy_loader.load_class(module_name, class_name, f) if class_name else None
+					processor = self.lazy_loader.load_class(module_name, class_name, self.command, f)
 					result = processor.process()
 					self.logger.info(f'File : {result["filename"]}\nPath : {result["filepath"]}\n')
 				else:

@@ -27,17 +27,23 @@ class Email(Base):
 		return body
 
 	def Send(self) -> None:
-		server = smtplib.SMTP(Configuration.SERVER, 587)
-		server.ehlo()
-		server.starttls()
+		try:
+			with smtplib.SMTP_SSL(Configuration.SERVER, 465) as server:
+				# server.set_debuglevel(1)
+				server.ehlo()
 
-		message = MIMEMultipart()
-		message["Subject"] = self.subject()
-		message["From"] = Configuration.SENDER
-		message["To"] = ", ".join(Configuration.RECEIVER)
-		mime_text = MIMEText(self.body(), "html")
-		message.attach(mime_text)
+				message = MIMEMultipart()
+				message["Subject"] = self.subject()
+				message["From"] = Configuration.SENDER
+				message["To"] = ", ".join(Configuration.RECEIVER)
+				mime_text = MIMEText(self.body(), "html")
+				message.attach(mime_text)
 
-		server.sendmail(Configuration.SENDER, Configuration.RECEIVER, message.as_string())
-		self.logger.info("Email send successfully.")
-
+				# server.login(Configuration.SENDER, "XXXX")
+				# server.send_message(message)
+				server.sendmail(Configuration.SENDER, Configuration.RECEIVER, message.as_string())				
+				server.close()
+		except Exception as e:
+			raise ApplicationException(self.command, e, sys)
+		else:
+			self.logger.info("Email send successfully.")

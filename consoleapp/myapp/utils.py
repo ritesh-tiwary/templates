@@ -5,7 +5,7 @@ from myapp.config import Configuration
 
 class Utils:
 	def __init__(self, command, date) -> None:
-		self.date = date
+		self.date = date.strip()
 		self.command = command.strip().upper()
 
 	def get_log_files(self) -> List[str]:

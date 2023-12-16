@@ -16,10 +16,10 @@ def get_version() -> str:
 	return version
 
 def get_requirements() -> List[str]:
-	with open(REQUIREMENT_FILE) as file:
+	with open(REQUIREMENTS_FILE) as file:
 		requirements_file = file.readlines()
 	
-	requirements_file = [package_name.replace("\n", "" for package_name in requirements_file)]
+	requirements_file = [package_name.replace("\n", "") for package_name in requirements_file]
 	if HYPHEN_E_DOT in requirements_file:
 		requirements_file.remove(HYPHEN_E_DOT)
 
@@ -38,13 +38,11 @@ setup(
 	install_requires = get_requirements(),
 	entry_points = {"console_scripts": ["myapp=myapp.app:main"]},
 	classifiers = [
-		"License :: OSI Approved :: MIT Software License",
+		"License :: OSI Approved :: MIT License",
 		"Programming Language :: Python :: 3.12",
 		"Operating System :: OS Independent"
 	],
-	license = "MIT Software License",
+	license = "MIT License",
 	platforms = ["Linux"],
 	python_requires = ">=3.12"
 )
-
-

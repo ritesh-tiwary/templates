@@ -20,6 +20,5 @@ def error_message_details(error_logger, error, error_details: sys) -> str:
 class ApplicationException(Exception):
 	def __init__(self, command, error, error_details: sys) -> None:
 		self.logger = Logger(command, __name__)
-		if not Configuration.TRACEBACK: disable_traceback()
+		if Configuration.DISABLE_TRACEBACK: disable_traceback()
 		self.error_message = error_message_details(self.logger, error, error_details)
-

@@ -8,7 +8,7 @@ class Configuration:
 	LOG_DIR	= os.getenv("LOG_DIR")
 	INBOUND	= os.getenv("INBOUND")
 	OUTBOUND = os.getenv("OUTBOUND")
-	TRACEBACK = eval(os.getenv("TRACEBACK"))
+	DISABLE_TRACEBACK = eval(os.getenv("DISABLE_TRACEBACK"))
 
 	def __init__(self, command) -> None:
 		self.command = command
