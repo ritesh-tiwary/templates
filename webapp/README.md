@@ -24,11 +24,11 @@ ritesh@ritesh-desktop:~/Documents/templates$ conda activate venv
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ git push
 ```
 ---
-![git-hub](/app/static/git-hub.png)
+![git-hub](app/static/git-hub.png)
 ---
 **`flask run`**
 
-![webapp](/app/static/webapp.png)
+![webapp](app/static/webapp.png)
 ---
 <span style="color:red">Note: Before executing the `flask run` command, ensure you have created the environment (`.env`) file.</span>
 ---
