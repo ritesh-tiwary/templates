@@ -1,4 +1,4 @@
-# **File Converter**
+# **webapp**
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/ritesh-tiwary/templates.svg?style=social)](https://github.com/ritesh-tiwary/templates/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/ritesh-tiwary/templates.svg?style=social)](https://github.com/ritesh-tiwary/templates/network/members)
@@ -24,11 +24,11 @@ ritesh@ritesh-desktop:~/Documents/templates$ conda activate venv
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ git push
 ```
 ---
-![git-hub](app/static/git-hub.png)
+![git-hub](/app/static/git-hub.png)
 ---
 **`flask run`**
 
-![webapp](app/static/webapp.png)
+![webapp](/app/static/webapp.png)
 ---
 <span style="color:red">Note: Before executing the `flask run` command, ensure you have created the environment (`.env`) file.</span>
 ---
