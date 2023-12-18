@@ -14,8 +14,8 @@ ritesh@ritesh-desktop:~/Documents/templates$ conda activate venv
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ eval "$(ssh-agent -s)"
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ ssh-add /home/ritesh/.ssh/id_rsa
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ git clone git@github.com:ritesh-tiwary/templates.git
-(venv) ritesh@ritesh-desktop:~/Documents/templates$ cd webapp
-(venv) ritesh@ritesh-desktop:~/Documents/templates/webapp$ pip install -r requirements.txt
+(venv) ritesh@ritesh-desktop:~/Documents/templates$ cd streamingapp
+(venv) ritesh@ritesh-desktop:~/Documents/templates/streamingapp$ start.cmd
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ cd ..
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ git remote -v
 (venv) ritesh@ritesh-desktop:~/Documents/templates$ git status

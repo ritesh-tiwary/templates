@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
-# Mount the 'templates' directory as a static directory
+# Mount the 'templates' and 'static' directory as a static directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/templates", StaticFiles(directory="templates"), name="templates")
 
@@ -40,15 +40,18 @@ async def generate_frames():
         ret, frame = cap.read()
         if not ret:
             break
+        elif cv2.waitKey(1) & 0xFF == ord('q'):
+            print("Quit!!")
+            break
         else:
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-# @app.get("/")
-# async def read_root():
-#     return {"message": "Video streaming server is running"}
+                   
+    frame.release()
+    cap.release()
+    cv2.destroyAllWindow()
 
 @app.get("/", response_class=HTMLResponse)
 async def home():

@@ -21,6 +21,7 @@ sdist/
 var/
 wheels/
 consoleapp/myapp-venv/
+streamingapp/streamingapp-venv
 share/python-wheels/
 *.egg-info/
 .installed.cfg
