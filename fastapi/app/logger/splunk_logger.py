@@ -3,9 +3,8 @@ import asyncio
 
 
 class SplunkLogger:
-    def __init__(self, url, logger):
+    def __init__(self, url):
         self.url = url
-        self.logger = logger
 
     async def send_log(self, message, level=logging.INFO):
         data = {
