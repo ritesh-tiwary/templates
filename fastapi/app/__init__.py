@@ -1,10 +1,12 @@
 import time
 from app.logger import Logger
 from app.routers import users, processes
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, status
 from fastapi.responses import HTMLResponse
+from fastapi.responses import JSONResponse
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.exceptions import RequestValidationError
 
 
 logger = Logger()
@@ -62,13 +64,22 @@ async def logging_middleware(request: Request, call_next):
     logger.info(f"Request Id: {request_id}")
     logger.info(f"Request Path: {request.url.path}")
     try:
-        before = time.time()
+        start_time = time.time()
         response = await call_next(request)
-        duration = time.time() - before
-        response.headers["X-Response-Time"] = str(duration)
-        logger.info(f"Response Time(ms): {duration}")
+        response_time = time.time() - start_time
+        response.headers["X-Response-Time"] = str(response_time)
+        logger.info(f"Response Time(ms): {response_time}")
         logger.info(f"Response Status Code: {response.status_code}")
         return response
     except Exception as exc:
         logger.error(f"Error: {exc}")
         raise
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    errors = {}
+    error = exc.errors()
+    errors["type"] = error[0]["type"]
+    errors["msg"] = error[0]["msg"]
+    errors["loc"] = error[0]["loc"]
+    return JSONResponse(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, content={"detail": errors})
