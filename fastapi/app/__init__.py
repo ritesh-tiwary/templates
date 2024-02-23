@@ -68,7 +68,7 @@ async def logging_middleware(request: Request, call_next):
         response = await call_next(request)
         response_time = time.time() - start_time
         response.headers["X-Response-Time"] = str(response_time)
-        logger.info(f"Response Time(ms): {response_time}")
+        logger.info(f"Response Time(seconds): {response_time}")
         logger.info(f"Response Status Code: {response.status_code}")
         return response
     except Exception as exc:
