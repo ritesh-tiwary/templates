@@ -10,3 +10,4 @@
 docker compose -p fastapi_app -f docker-compose.yml up -d --build --scale fastapi.app=3
 
 # uvicorn app:app --proxy-headers --host 0.0.0.0 --port 8000 --reload
+# python -m uvicorn app:app --proxy-headers --host 0.0.0.0 --port 8888 --reload

@@ -1,6 +1,11 @@
 uuid==1.30
+pyjwt==2.8.0
+uvicorn==0.29.0
+fastapi==0.110.1
+pydantic==2.7.0
 aiologger==0.7.0
-fastapi==0.109.2
-uvicorn==0.27.1
+cryptography==42.0.5
+python-dotenv==1.0.1
+email-validator==2.1.1
 python-multipart==0.0.9
-email-validator==2.1.0.post1
+pydantic_settings==2.2.1
