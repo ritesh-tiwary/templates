@@ -1,0 +1,14 @@
+{
+    "PersonalInfo": {
+        "Name": "Ram",
+        "Age": 20
+    },
+    "FinancialInfo": {
+        "Bank": "SBI",
+        "Salary": 10000
+    },
+    "DemographicInfo": {
+        "City": "Ranchi",
+        "Country": "India"
+    }
+}

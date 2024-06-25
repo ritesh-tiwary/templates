@@ -1,0 +1,14 @@
+{
+    "PersonalInfo": {
+        "Name": "{{ PersonalInfo.Name | default }}",
+        "Age": {{ PersonalInfo.Age | default(0) }}
+    },
+    "FinancialInfo": {
+        "Bank": "{{ FinancialInfo.Bank | default }}",
+        "Salary": {{ FinancialInfo.Salary | default(0) }}
+    },
+    "DemographicInfo": {
+        "City": "{{ DemographicInfo.City | default }}",
+        "Country": "{{ DemographicInfo.Country | default }}"
+    }
+}

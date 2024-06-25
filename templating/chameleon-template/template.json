@@ -1,0 +1,14 @@
+{
+    "PersonalInfo": {
+        "Name": "${values.get('PersonalInfo', {}).get('Name', '')}",
+        "Age": ${values.get('PersonalInfo', {}).get('Age', 0)}
+    },
+    "FinancialInfo": {
+        "Bank": "${values.get('FinancialInfo', {}).get('Bank', '')}",
+        "Salary": ${values.get('FinancialInfo', {}).get('Salary', 0)}
+    },
+    "DemographicInfo": {
+        "City": "${values.get('DemographicInfo', {}).get('City', '')}",
+        "Country": "${values.get('DemographicInfo', {}).get('Country', '')}"
+    }
+}
